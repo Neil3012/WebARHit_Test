@@ -30,18 +30,18 @@
   }
     </script>
 
-		<script type="importmap">
+		<!-- <script type="importmap">
 			{
 				"imports": {
 					"three": "./build/three.module.js",
 					"three/addons/": "./jsm/"
 				}
 			}
-		</script>
+		</script> -->
 
 		<script type="module">
 
-			import * as THREE from 'three';
+			import * as THREE from './build/three.module.js';
 			import { ARButton } from './jsm/webxr/ARButton.js';
 
 			let container;
