@@ -41,9 +41,8 @@
 
     <script type="module">
 
-        import * as THREE from 'build/three.module.js';
+        import * as THREE from '../build/three.module.js';
         import { ARButton } from './jsm/webxr/ARButton.js';
-
         import { OrbitControls } from './jsm/controls/OrbitControls.js';
         import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
         import { RGBELoader } from './jsm/loaders/RGBELoader.js';
@@ -94,13 +93,13 @@
                         current_object = glb.scene;
                         scene.add(current_object);
 
-                        // arPlace();
+                        arPlace();
 
-                        // var box = new THREE.Box3();
-                        // box.setFromObject(current_object);
-                        // box.center(controls.target);
+                        var box = new THREE.Box3();
+                        box.setFromObject(current_object);
+                        box.center(controls.target);
 
-                        // controls.update();
+                        controls.update();
                         render();
                     });
                 });
@@ -114,8 +113,8 @@
 
             camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 20);
 
-            const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 3);
-            light.position.set(0.5, 1, 0.25);
+            var light = new THREE.directionalLight(0xdddddd,1)
+            light.position.set(0,0,1).normalize();
             scene.add(light);
 
             //
