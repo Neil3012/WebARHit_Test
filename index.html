@@ -11,13 +11,13 @@
 	
    <div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="#">Item_1</a>
-	<a href="#">Item_2</a>
-	<a href="#">Item_3</a>
-	<a href="#">Item_4</a>
+				<a class="ar-object" id="1" href="#">item_1</a>
+				<a class="ar-object" id="2" href="#">item_2</a>
+				<a class="ar-object" id="3" href="#">item_3</a>
+				<a class="ar-object" id="4" href="#">item_4</a>
    </div>
   
-
+   <div id="container" style="position: fixed;"></div>
    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
   
     <script>
@@ -30,20 +30,15 @@
   }
     </script>
 
-		<!-- <script type="importmap">
-			{
-				"imports": {
-					"three": "./build/three.module.js",
-					"three/addons/": "./jsm/"
-				}
-			}
-		</script> -->
 
 		<script type="module">
 
 			import * as THREE from './build/three.module.js';
 			import { ARButton } from './jsm/webxr/ARButton.js';
-
+			import { OrbitControls } from './jsm/controls/OrbitControls.js';
+			import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
+			import { RGBELoader } from './jsm/loaders/RGBELoader.js';
+			
 			let container;
 			let camera, scene, renderer;
 			let controller;
